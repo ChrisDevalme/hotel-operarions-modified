@@ -24,17 +24,20 @@ public class Room {
     public boolean isAvailable() { return !isDirty && !isOccupied; }
 
     public void checkIn() {
-        this.isOccupied = true;
-        this.isDirty = true;
+        if(isAvailable()) {
+            isOccupied = true;
+            isDirty = true;
+        }
     }
 
     public void cleanRoom() {
-        this.isDirty = false;
+        if (!isOccupied) {
+            isDirty = false;
+        }
     }
 
     public void checkOut() {
-        this.isOccupied = false;
-        cleanRoom();
+        isOccupied = false;
     }
 
 
