@@ -88,8 +88,10 @@ public class Employee {
 
     public void punchOut(int hours) {
         if(hours > 0 && hours <=24) {
-            this.punchOutTime = hours;
+            int duration = hours - punchInTime;
+            hoursWorked += duration;
+            punchInTime = 0;
         }
-        this.hoursWorked = punchOutTime - punchInTime;
+
     }
 }
