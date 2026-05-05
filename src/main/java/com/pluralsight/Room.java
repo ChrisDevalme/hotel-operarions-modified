@@ -22,4 +22,20 @@ public class Room {
     public boolean isDirty() { return isDirty; }
 
     public boolean isAvailable() { return !isDirty && !isOccupied; }
+
+    public void checkIn() {
+        this.isOccupied = true;
+        this.isDirty = true;
+    }
+
+    public void cleanRoom() {
+        this.isDirty = false;
+    }
+
+    public void checkOut() {
+        this.isOccupied = false;
+        cleanRoom();
+    }
+
+
 }
