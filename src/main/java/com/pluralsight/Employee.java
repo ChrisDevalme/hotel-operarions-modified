@@ -92,6 +92,15 @@ public class Employee {
             hoursWorked += duration;
             punchInTime = 0;
         }
+    }
 
+    public void punchTimeCard(int time) {
+        if(punchInTime == 0) {
+            punchInTime = time;
+        } else {
+            int duration = time - punchInTime;
+            hoursWorked += duration;
+            punchInTime = 0;
+        }
     }
 }
